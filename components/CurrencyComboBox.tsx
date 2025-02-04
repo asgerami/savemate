@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/popover";
 import { Currencies, Currency } from "@/lib/currencies";
 import { useQuery, } from "@tanstack/react-query";
+import { UserSettings } from "@prisma/client";
 
 export function CurrencyComboBox() {
   const [open, setOpen] = React.useState(false);
@@ -33,7 +34,6 @@ export function CurrencyComboBox() {
     queryFn: () => fetch("/api/user-settings").then((res) => res.json()),
   });
 
-  console.log("@@ USER SETTINGS", userSettings);
 
   if (isDesktop) {
     return (
