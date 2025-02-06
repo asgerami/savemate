@@ -24,15 +24,15 @@ async function page() {
   return (
     <div className="h-full bg-background">
       <div className="border-b bg-card">
-        <div className="container flex flex-wrap items-center justify-between gap-6 py-8 ps-8">
+        <div className="container mx-auto flex flex-wrap items-center justify-between gap-6 py-8 px-8">
           <p className="text-3xl font-bold">Hello, {user.firstName}! 👋</p>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             <CreateTranscationDialog
               trigger={
                 <Button
                   variant={"outline"}
-                  className="border-emerald-500 bg-emerald-950 text-white hover:bg-emerald-700 hover:text-white"
+                  className="border-emerald-500 bg-emerald-950 text-white hover:bg-emerald-700 hover:text-white px-6"
                 >
                   New income 🤑
                 </Button>
@@ -44,7 +44,7 @@ async function page() {
               trigger={
                 <Button
                   variant={"outline"}
-                  className="border-rose-500 bg-rose-950 text-white hover:bg-rose-700 hover:text-white"
+                  className="border-rose-500 bg-rose-950 text-white hover:bg-rose-700 hover:text-white px-6"
                 >
                   New expense 😤
                 </Button>
@@ -54,7 +54,9 @@ async function page() {
           </div>
         </div>
       </div>
-      <Overview userSettings={userSettings} />
+      <div className="container mx-auto px-8 py-6">
+        <Overview userSettings={userSettings} />
+      </div>
     </div>
   );
 }
