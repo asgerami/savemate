@@ -24,11 +24,12 @@ import { cn } from "@/lib/utils";
 interface Props {
   type: TransactionType;
   onChange: (value: string) => void;
+  value?: string;
 }
 
-function CatagoryPicker({ type, onChange }: Props) {
+function CatagoryPicker({ type, onChange, value: initialValue }: Props) {
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState<string>("");
+  const [value, setValue] = React.useState<string>(initialValue || "");
 
   // Get the queryClient instance
   const queryClient = useQueryClient();
@@ -37,6 +38,10 @@ function CatagoryPicker({ type, onChange }: Props) {
     if (!value) return;
     onChange(value);
   }, [onChange, value]);
+
+  useEffect(() => {
+    setValue(initialValue || "");
+  }, [initialValue]);
 
   const catagoriesQuery = useQuery({
     queryKey: ["catagories", type],

@@ -1,7 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { OverviewQuerySchema } from "@/schema/overview";
 import { currentUser } from "@clerk/nextjs/server";
-import { Return } from "@prisma/client/runtime/library";
 import { redirect } from "next/navigation";
 
 export async function GET(request: Request) {

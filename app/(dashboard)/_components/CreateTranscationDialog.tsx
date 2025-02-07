@@ -60,13 +60,6 @@ function CreateTransactionDialog({ trigger, type }: Props) {
   });
 
   const [open, setOpen] = useState(false);
-  const handleCategoryChange = useCallback(
-    (value: string) => {
-      form.setValue("catagory", value);
-    },
-    [form]
-  );
-
   const queryClient = useQueryClient();
 
   const { mutate, isPending } = useMutation({
@@ -165,7 +158,8 @@ function CreateTransactionDialog({ trigger, type }: Props) {
                     <FormControl>
                       <CatagoryPicker
                         type={type}
-                        onChange={handleCategoryChange}
+                        onChange={field.onChange}
+                        value={field.value}
                       />
                     </FormControl>
                     <FormDescription>

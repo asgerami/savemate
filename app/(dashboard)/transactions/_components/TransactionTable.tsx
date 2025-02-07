@@ -48,7 +48,7 @@ interface Props {
   to: Date;
 }
 
-const emptyData: any[] = [];
+const emptyData: TransactionHistoryRow[] = [];
 
 type TransactionHistoryRow = GetTransactionHistoryResponseType[0];
 
@@ -150,8 +150,14 @@ function TransactionTable({ from, to }: Props) {
       ).then((res) => res.json()),
   });
 
-  const handleExportCSV = (data: any[]) => {
-    const csv = generateCsv(csvConfig)(data);
+  const handleExportCSV = (data: Partial<TransactionHistoryRow>[]) => {
+    const formattedData = data.map((row) => ({
+      ...row,
+      date: row.date?.toLocaleDateString(),
+      createdAt: row.createdAt?.toLocaleDateString(),
+      updateAt: row.updateAt?.toLocaleDateString(),
+    }));
+    const csv = generateCsv(csvConfig)(formattedData);
     download(csvConfig)(csv);
   };
 
@@ -211,8 +217,8 @@ function TransactionTable({ from, to }: Props) {
             className="ml-auto h-8 lg:flex"
             onClick={() => {
               const data = table.getFilteredRowModel().rows.map((row) => ({
-                category: row.original.category,
-                categoryIcon: row.original.categoryIcon,
+                category: row.original.catagory,
+                categoryIcon: row.original.catagoryIcon,
                 description: row.original.description,
                 type: row.original.type,
                 amount: row.original.amount,

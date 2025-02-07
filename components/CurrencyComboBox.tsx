@@ -53,10 +53,10 @@ export function CurrencyComboBox() {
       });
 
       setSelectedOption(
-        Currencies.find((e) => e.value === data.currency) || null
+        Currencies.find((currency) => currency.value === data.currency) || null
       );
     },
-    onError: (e) => {
+    onError: () => {
       toast.error("something went wrong", {
         id: "update-currency",
       });

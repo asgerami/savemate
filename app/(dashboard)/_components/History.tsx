@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import HistoryPeriodSelector from "@/app/(dashboard)/_components/HistoryPeriodSelctor";
@@ -75,7 +76,7 @@ function History({ userSettings }: { userSettings: UserSettings }) {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <SkeletonWrapper isLoading={historyDataQuery.isFetching} fullWidth={true}>
+          <SkeletonWrapper isLoading={historyDataQuery.isFetching} fullWidth>
             {dataAvailable && (
               <ResponsiveContainer width={"100%"} height={300}>
                 <BarChart
