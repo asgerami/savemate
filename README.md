@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1>SaveMate - Your Personal Financial Companion 💰</h1>
 
-## Getting Started
+SaveMate is a powerful financial app and budgeting software designed to help you take control of your finances, track your income and expenses, and save money effortlessly. With its intuitive interface and robust features, SaveMate makes managing your money simple and effective.
 
-First, run the development server:
+<h3>Key Features ✨</h3>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+📊 Income and Expense Tracking
+Easily log and monitor your income and expenses to gain a clear understanding of your financial health.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📅 History Section
+Group transactions by month or year to get a comprehensive financial overview and track your progress over time.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+💡 Animated Tooltips
+Enjoy an enhanced user experience with engaging and informative tooltips that guide you through the app's features.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+📝 Simple Transaction Form
+Quickly create and log transactions with an easy-to-use form that includes category and date selection.
 
-## Learn More
+🗂️ Flexible Category Creation
+Manage categories on a dedicated page or create them on-the-fly while filling out the transaction form.
 
-To learn more about Next.js, take a look at the following resources:
+📋 Comprehensive Transaction Table
+View detailed transaction data on the transactions page, with options to remove and filter transactions by date, category, and type.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+💱 Currency Management
+Switch currencies and manage categories seamlessly on the manage page, ensuring flexibility for users worldwide.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<h3>Technology Stack 🛠️</h3>
 
-## Deploy on Vercel
+SaveMate is built using modern technologies to ensure a smooth and scalable experience:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Frontend Framework: Next.js ⚡
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Database ORM: Prisma ORM 🗄️
+
+<h3>Database</h3>
+
+PostgreSQL
+
+UI Components: shadcn UI 🎨
+
+Form Management: React Hook Form 📝
+
+Validation: Zod ✅
+
+Styling: Tailwind CSS 🎨
+
+Data Fetching: TanStack Query 🔄
